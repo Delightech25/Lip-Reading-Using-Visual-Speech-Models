@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card p-4 text-center">
+
+<h3>Webcam Capture</h3>
+
+<video id="video" width="480" height="360" autoplay></video>
+
+<br><br>
+
+<button class="btn btn-primary" onclick="startCamera()">Start Camera</button>
+
+</div>
+
+<script>
+
+function startCamera(){
+
+navigator.mediaDevices.getUserMedia({video:true})
+.then(function(stream){
+
+document.getElementById("video").srcObject=stream
+
+})
+
+}
+
+</script>
+
+{% endblock %}

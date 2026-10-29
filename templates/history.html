@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card p-4">
+
+<h3>Prediction History</h3>
+
+<table class="table">
+
+<tr>
+<th>Prediction</th>
+<th>Confidence</th>
+</tr>
+
+{% for r in data %}
+
+<tr>
+<td>{{r[0]}}</td>
+<td>{{r[1]}}%</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+{% endblock %}

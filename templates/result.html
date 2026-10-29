@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card p-5 text-center shadow">
+
+<h3>Prediction Result</h3>
+
+<h1 class="text-primary">{{result}}</h1>
+
+<div class="progress mt-3" style="height:25px">
+<div class="progress-bar bg-success" style="width: {{confidence}}%">
+{{confidence}}%
+</div>
+</div>
+
+<hr>
+
+<h5>Uploaded Video</h5>
+
+<video class="rounded shadow" width="480" controls>
+<source src="{{ url_for('uploaded_file', filename=video) }}" type="video/mp4">
+</video>
+
+<br><br>
+
+<a href="/dashboard" class="btn btn-secondary">
+Predict Again
+</a>
+
+</div>
+
+{% endblock %}

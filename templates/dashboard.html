@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card p-4 shadow">
+
+<h4>Upload Lip Video</h4>
+
+<form action="/predict" method="POST" enctype="multipart/form-data">
+
+<input type="file" name="video" class="form-control mb-3" required>
+
+<button class="btn btn-primary">Predict</button>
+
+</form>
+
+</div>
+
+{% endblock %}
